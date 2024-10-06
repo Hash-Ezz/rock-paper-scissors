@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .choice {
+          @apply bg-white border-[#606e85] rounded-full h-28 w-28 flex items-center justify-center relative;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gradient my-12 max-h-screen">
+    <header
+      class="border-4 border-[#606e85] rounded-md flex justify-between p-4 max-w-screen-sm mx-auto"
+    >
+      <figure class="scale-[0.8]">
+        <img src="./images/logo.svg" alt="Rock, Paper, Scissors" />
+      </figure>
+      <div class="bg-white grid grid-row-2 place-content-center py-4 px-6">
+        <p
+          class="uppercase font-semibold text-[#2a46c0] tracking-widest text-sm"
+        >
+          Score
+        </p>
+        <p id="score" class="text-5xl font-bold text-center text-[#3b4363]">
+          12
+        </p>
+      </div>
+    </header>
+    <main>
+      <section
+        class="grid grid-cols-3 grid-rows-3 place-items-center my-10 gap-4"
+        data-name="bored"
+        style="
+          grid-template-areas:
+            ' . scissors . '
+            ' spock .  paper  '
+            ' lizard . rock ';
+          gap: 4rem;
+        "
+      >
+        <button
+          class="choice"
+          data-choice="paper"
+          id="paper"
+          style="grid-area: paper"
+        >
+          <figure>
+            <img src="./images/icon-paper.svg" alt="Paper" />
+          </figure>
+        </button>
+
+        <button
+          class="choice"
+          data-choice="scissors"
+          id="scissors"
+          style="grid-area: scissors"
+        >
+          <figure>
+            <img src="./images/icon-scissors.svg" alt="Scissors" />
+          </figure>
+        </button>
+
+        <button
+          class="choice"
+          data-choice="rock"
+          id="rock"
+          style="grid-area: rock"
+        >
+          <figure>
+            <img src="./images/icon-rock.svg" alt="Rock" />
+          </figure>
+        </button>
+
+        <button
+          class="choice"
+          data-choice="lizard"
+          id="lizard"
+          style="grid-area: lizard"
+        >
+          <figure>
+            <img src="./images/icon-lizard.svg" alt="Lizard" />
+          </figure>
+        </button>
+
+        <button
+          class="choice"
+          data-choice="spock"
+          id="spock"
+          style="grid-area: spock"
+        >
+          <figure>
+            <img src="./images/icon-spock.svg" alt="Spock" />
+          </figure>
+        </button>
+      </section>
+      <style>
+        section button.choice {
+          width: 100px;
+          height: 100px;
+        }
+
+        section {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+      </style>
+      <div class="flex flex-col justify-center items-center py-5">
+          <p
+            class="text-center text-3xl font-bold text-[#3b4363] uppercase margin-top-10"
+            id="result"
+          ></p>
+          <button
+          id="play-again"
+          class="py-1 px-8 border uppercase rounded-md text-white tracking-widest font-semibold hover:bg-[#606e85] mt-8 mx-auto block"
+          >
+          play Again
+        </button>
+        <button
+        id="rules"
+        class="py-1 px-10 border uppercase rounded-md text-white tracking-widest font-semibold hover:bg-[#606e85] mt-8 float-end"
+        >
+        Rules
+      </button>
+     </div>
+      <div
+        id="rules-modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+      >
+        <div class="bg-white p-4 rounded-md">
+          <img
+            src="images/image-rules-bonus.svg"
+            alt="Rules"
+            class="mb-4"
+            id="rules-img"
+          />
+          <button
+            id="close-modal"
+            class="py-1 px-8 border uppercase rounded-md text-[#606e85] tracking-widest font-semibold hover:bg-[#606e85] hover:text-white block mx-auto"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </main>
+    
+    
+    <footer>
+      <div class="attribution text-orange">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+        >. Coded by <a class="text-orange" href="#">Abdulaziz Alhashedi</a>.
+      </div>
+    </footer>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
